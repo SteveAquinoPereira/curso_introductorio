@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Corte extends Migration
+class CreateSeccionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class Corte extends Migration
      */
     public function up()
     {
-        Schema::create('corte', function (Blueprint $table) {
-            $table->bigIncrements('id_corte');
-            $table->string('corte',50);
+        Schema::create('seccions', function (Blueprint $table) {
+            $table->bigIncrements('id_seccion');
+            $table->string('nombre_seccion',100);
         });
     }
 
@@ -26,6 +26,6 @@ class Corte extends Migration
      */
     public function down()
     {
-        Schema::drop('corte');
+        Schema::dropIfExists('seccions');
     }
 }

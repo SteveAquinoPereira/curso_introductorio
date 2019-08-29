@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class MateriaEvaluacion extends Migration
+class UsuarioEvaluacion extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class MateriaEvaluacion extends Migration
      */
     public function up()
     {
-        Schema::create('materia_evaluacion', function (Blueprint $table) {
+        Schema::create('usuario_evaluacion', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('materia');
+            $table->unsignedBigInteger('usuario');
             $table->unsignedBigInteger('evaluacion');
-            $table->foreign('materia')->references('id_materia')->on('materia');
-            $table->foreign('evaluacion')->references('id_evaluacion')->on('evaluacion');
+            $table->integer('nota');
+            $table->foreign('usuario')->references('id_usuario')->on('usuarios');
+            $table->foreign('evaluacion')->references('id_evaluacion')->on('evaluacions');
         });
     }
 
@@ -29,6 +30,6 @@ class MateriaEvaluacion extends Migration
      */
     public function down()
     {
-        Schema::drop('materia_evaluacion');
+        Schema::drop('usuario_evaluacion');
     }
 }

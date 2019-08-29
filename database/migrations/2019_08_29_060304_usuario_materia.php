@@ -17,8 +17,8 @@ class UsuarioMateria extends Migration
 
             $table->unsignedBigInteger('usuario');
             $table->unsignedBigInteger('materia');
-            $table->foreign('usuario')->references('id_usuario')->on('usuario');
-            $table->foreign('materia')->references('id_materia')->on('materia');
+            $table->foreign('usuario')->references('id_usuario')->on('usuarios');
+            $table->foreign('materia')->references('id_materia')->on('materias');
         });
     }
 

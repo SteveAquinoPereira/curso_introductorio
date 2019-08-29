@@ -17,8 +17,8 @@ class SeccionMateria extends Migration
 
             $table->unsignedBigInteger('seccion');
             $table->unsignedBigInteger('materia');
-            $table->foreign('seccion')->references('id_seccion')->on('seccion');
-            $table->foreign('materia')->references('id_materia')->on('materia');
+            $table->foreign('seccion')->references('id_seccion')->on('seccions');
+            $table->foreign('materia')->references('id_materia')->on('materias');
         });
     }
 

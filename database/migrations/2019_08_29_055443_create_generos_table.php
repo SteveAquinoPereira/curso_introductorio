@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TipoUsuario extends Migration
+class CreateGenerosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class TipoUsuario extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_usuario', function (Blueprint $table) {
-            $table->bigIncrements('id_tipo_usuario');
-            $table->string('tipo_usuario',50);
+        Schema::create('generos', function (Blueprint $table) {
+            $table->bigIncrements('id_genero');
+            $table->string('genero',50);
         });
     }
 
@@ -26,6 +26,6 @@ class TipoUsuario extends Migration
      */
     public function down()
     {
-        Schema::drop('tipo_usuario');
+        Schema::dropIfExists('generos');
     }
 }
