@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCortesTable extends Migration
+class CreateGendersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateCortesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cortes', function (Blueprint $table) {
-            $table->bigIncrements('id_corte');
-            $table->string('corte',50);
+        Schema::create('genders', function (Blueprint $table) {
+            $table->bigIncrements('id_gender');
+            $table->string('gender',50);
         });
     }
 
@@ -26,6 +26,6 @@ class CreateCortesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cortes');
+        Schema::dropIfExists('genders');
     }
 }
