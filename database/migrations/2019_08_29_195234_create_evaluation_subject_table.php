@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEvaluationSubject extends Migration
+class CreateEvaluationSubjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,11 @@ class CreateEvaluationSubject extends Migration
     {
         Schema::create('evaluation_subject', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('subject');
             $table->unsignedBigInteger('evaluation');
-            $table->foreign('subject')->references('id_subject')->on('subjects');
+            $table->unsignedBigInteger('subject');
             $table->foreign('evaluation')->references('id_evaluation')->on('evaluations');
+            $table->foreign('subject')->references('id_subject')->on('subjects');
+            
         });
     }
 

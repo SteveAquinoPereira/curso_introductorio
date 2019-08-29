@@ -14,8 +14,8 @@ class CreateCutsTable extends Migration
     public function up()
     {
         Schema::create('cuts', function (Blueprint $table) {
-            $table->bigIncrements('id_cuts');
-            $table->string('cuts',50);
+            $table->bigIncrements('id_cut');
+            $table->string('cut',50);
         });
     }
 
